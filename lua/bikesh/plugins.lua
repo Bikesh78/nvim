@@ -14,6 +14,21 @@ use {
   requires = { {'nvim-lua/plenary.nvim'} }
 }
 
+use 'nvim-lualine/lualine.nvim'
+
+use {
+      'nvim-treesitter/nvim-treesitter',
+      run = ':TSUpdate'
+    }
+
+use "williamboman/mason.nvim" 
+use "williamboman/mason-lspconfig.nvim"
+use "neovim/nvim-lspconfig"
+--use "hrsh7th/nvim-cmp"
+
+use "kyazdani42/nvim-web-devicons"
+use 'nvim-tree/nvim-tree.lua'
+
 -- tokyo night colour scheme
 use 'folke/tokyonight.nvim'
 end)
