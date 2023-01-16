@@ -29,6 +29,8 @@ return require('packer').startup(function(use)
   -- snippet
   use "L3MON4D3/LuaSnip"
 
+  -- formatting and linting
+  use "jose-elias-alvarez/null-ls.nvim"
   --file explorer
   use "kyazdani42/nvim-web-devicons"
   use 'nvim-tree/nvim-tree.lua'
@@ -36,4 +38,3 @@ return require('packer').startup(function(use)
   -- tokyo night colour scheme
   use 'folke/tokyonight.nvim'
 end)
-
