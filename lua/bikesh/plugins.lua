@@ -1,7 +1,21 @@
+vim.cmd([[
+  augroup packer_user_config
+    autocmd!
+    autocmd BufWritePost plugins.lua source <afile> | PackerInstall
+  augroup end
+]])
+
 return require('packer').startup(function(use)
   -- Packer manager
   use 'wbthomason/packer.nvim'
 
+  use { 'jiangmiao/auto-pairs' }
+  use {
+    'numToStr/Comment.nvim',
+    config = function()
+      require('Comment').setup()
+    end
+  }
   -- telescope
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
