@@ -6,8 +6,8 @@ local keymap = vim.api.nvim_set_keymap
 
 --Remap space as leader key
 -- keymap("", "<Space>", "<Nop>", opts) --<Nop> is a key sequence that does nothing
- vim.g.mapleader = " "
- vim.g.maplocalleader = " "
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 -- Modes
 --   normal_mode = "n",
@@ -30,13 +30,11 @@ keymap("n", "<C-Down>", ":resize +2<CR>", opts)
 keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
---keymap("n", "<leader>e", ":Lex 20<CR>", opts) -- open explorer on left side with size 20
-keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts) -- toggle nvim-tree file explorer 
+keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts) -- toggle nvim-tree file explorer
 
 -- Navigate buffers
 keymap("n", "<leader>bn", ":bnext<CR>", opts)
 keymap("n", "<leader>bb", ":bprevious<CR>", opts)
--- vim.api.nvim_set_keymap("n", "<leader>bb", ":bprevious<CR>", { noremap = true, silent = true })
 
 -- Telescope
 keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
@@ -46,3 +44,6 @@ keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 keymap("n", "<leader>fh", ":Telescope help_tags<CR>", opts) -- Search Help
 keymap("n", "<leader>fw", ":Telescope grep_string<CR>", opts) -- Search current word
 
+-- Comments
+keymap("n", "<leader>/", "<cmd>lua require('Comment.api').toggle.linewise.current()<CR>", opts)
+keymap("x", "<leader>/", '<ESC><CMD>lua require("Comment.api").toggle.linewise(vim.fn.visualmode())<CR>',opts)

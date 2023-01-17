@@ -10,12 +10,8 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
   use { 'jiangmiao/auto-pairs' }
-  use {
-    'numToStr/Comment.nvim',
-    config = function()
-      require('Comment').setup()
-    end
-  }
+  use {'numToStr/Comment.nvim'}
+
   -- telescope
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
