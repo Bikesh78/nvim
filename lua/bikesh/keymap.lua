@@ -47,3 +47,20 @@ keymap("n", "<leader>fw", ":Telescope grep_string<CR>", opts) -- Search current 
 -- Comments
 keymap("n", "<leader>/", "<cmd>lua require('Comment.api').toggle.linewise.current()<CR>", opts)
 keymap("x", "<leader>/", '<ESC><CMD>lua require("Comment.api").toggle.linewise(vim.fn.visualmode())<CR>',opts)
+
+-- ToggleTerm
+-- toggle terminal with count 1
+keymap("n","<A-1>","<CMD>1ToggleTerm direction=horizontal<CR>",opts)
+keymap("i","<A-1>","<CMD>1ToggleTerm direction=horizontal<CR>",opts)
+keymap("t","<A-1>","<CMD>1ToggleTerm direction=horizontal<CR>",opts)
+-- toggle terminal with count 2
+keymap("n","<A-2>","<CMD>2ToggleTerm direction=vertical<CR>",opts)
+keymap("i","<A-2>","<CMD>2ToggleTerm direction=vertical<CR>",opts)
+keymap("t","<A-2>","<CMD>2ToggleTerm direction=vertical<CR>",opts)
+-- toggle terminal with count 3
+keymap("n","<A-3>","<CMD>3ToggleTerm direction=float<CR>",opts)
+keymap("i","<A-3>","<CMD>3ToggleTerm direction=float<CR>",opts)
+keymap("t","<A-3>","<CMD>3ToggleTerm direction=float<CR>",opts)
+
+-- disable search highlight
+keymap('n','<leader>h',':nohlsearch<CR>',opts)

@@ -10,7 +10,11 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
   use { 'jiangmiao/auto-pairs' }
-  use {'numToStr/Comment.nvim'}
+  use { 'numToStr/Comment.nvim' }
+  use { "akinsho/toggleterm.nvim" }
+--   use {"akinsho/toggleterm.nvim", tag = '*', config = function()
+--   require("toggleterm").setup()
+-- end}
 
   -- telescope
   use {
