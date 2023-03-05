@@ -12,9 +12,9 @@ return require('packer').startup(function(use)
   use { 'jiangmiao/auto-pairs' }
   use { 'numToStr/Comment.nvim' }
   use { "akinsho/toggleterm.nvim" }
---   use {"akinsho/toggleterm.nvim", tag = '*', config = function()
---   require("toggleterm").setup()
--- end}
+  --   use {"akinsho/toggleterm.nvim", tag = '*', config = function()
+  --   require("toggleterm").setup()
+  -- end}
 
   -- telescope
   use {
@@ -51,4 +51,7 @@ return require('packer').startup(function(use)
 
   -- tokyo night colour scheme
   use 'folke/tokyonight.nvim'
+
+  -- auto tag close
+  use 'windwp/nvim-ts-autotag'
 end)
