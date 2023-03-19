@@ -45,6 +45,10 @@ return require('packer').startup(function(use)
 
   -- formatting and linting
   use "jose-elias-alvarez/null-ls.nvim"
+
+  -- git
+  use "tpope/vim-fugitive"
+
   --file explorer
   use "kyazdani42/nvim-web-devicons"
   use 'nvim-tree/nvim-tree.lua'
