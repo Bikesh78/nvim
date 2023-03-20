@@ -1,61 +1,64 @@
-vim.cmd([[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerInstall
-  augroup end
-]])
+-- setup lazy.nvim
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
 
-return require('packer').startup(function(use)
-  -- Packer manager
-  use 'wbthomason/packer.nvim'
 
-  use { 'jiangmiao/auto-pairs' }
-  use { 'numToStr/Comment.nvim' }
-  use { "akinsho/toggleterm.nvim" }
-  --   use {"akinsho/toggleterm.nvim", tag = '*', config = function()
-  --   require("toggleterm").setup()
-  -- end}
+require('lazy').setup({
+  { 'jiangmiao/auto-pairs' },
+
+  { 'numToStr/Comment.nvim' },
+  { "akinsho/toggleterm.nvim" },
 
   -- telescope
-  use {
+  {
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
-    requires = { { 'nvim-lua/plenary.nvim' } }
-  }
+    dependencies = { { 'nvim-lua/plenary.nvim' } }
+  },
 
-  use 'nvim-lualine/lualine.nvim'
+  'nvim-lualine/lualine.nvim',
 
-  use {
+  {
     'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate'
-  }
+    build = ':TSUpdate'
+  },
 
   -- lsp
-  use "williamboman/mason.nvim"
-  use "williamboman/mason-lspconfig.nvim"
-  use "neovim/nvim-lspconfig"
+  "williamboman/mason.nvim",
+  "williamboman/mason-lspconfig.nvim",
+  "neovim/nvim-lspconfig",
 
   -- autocomplete
-  use "hrsh7th/nvim-cmp"
-  use 'hrsh7th/cmp-nvim-lsp'
-  use 'hrsh7th/cmp-buffer'
-  use 'hrsh7th/cmp-path'
+  "hrsh7th/nvim-cmp",
+  'hrsh7th/cmp-nvim-lsp',
+  'hrsh7th/cmp-buffer',
+  'hrsh7th/cmp-path',
 
   -- snippet
-  use "L3MON4D3/LuaSnip"
+  "L3MON4D3/LuaSnip",
 
   -- formatting and linting
-  use "jose-elias-alvarez/null-ls.nvim"
+  "jose-elias-alvarez/null-ls.nvim",
 
   -- git
-  use "tpope/vim-fugitive"
+  "tpope/vim-fugitive",
 
   --file explorer
-  use "kyazdani42/nvim-web-devicons"
-  use 'nvim-tree/nvim-tree.lua'
+  "kyazdani42/nvim-web-devicons",
+  'nvim-tree/nvim-tree.lua',
 
   -- tokyo night colour scheme
-  use 'folke/tokyonight.nvim'
+  'folke/tokyonight.nvim',
 
   -- auto tag close
-  use 'windwp/nvim-ts-autotag'
-end)
+  'windwp/nvim-ts-autotag',
+})
