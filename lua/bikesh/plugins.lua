@@ -62,3 +62,4 @@ require('lazy').setup({
   -- auto tag close
   'windwp/nvim-ts-autotag',
 })
+-- vim.cmd [[colorscheme tokyonight]] -- set colorscheme to tokyonight

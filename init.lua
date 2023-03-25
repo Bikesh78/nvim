@@ -1,6 +1,6 @@
-require('bikesh.config')
 require('bikesh.keymap')
 require('bikesh.plugins')
+require('bikesh.config') -- rearranged config after plugins module to make colorscheme work
 require('bikesh.nvimTree') -- call nvimTree module at top to make sure nvim-tree works correctly
 require('bikesh.telescope')
 require('bikesh.lualine')
