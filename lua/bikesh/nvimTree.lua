@@ -14,8 +14,9 @@ nvim_tree.setup {
   update_focused_file = {
     enable = true,
     -- update_cwd = true,
-    sync_root_with_cwd = true,
+    --sync_root_with_cwd = true,
   },
+  sync_root_with_cwd = true,
   renderer = {
     root_folder_modifier = ":t",
     icons = {
