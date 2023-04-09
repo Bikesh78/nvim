@@ -64,3 +64,7 @@ keymap("t","<A-3>","<CMD>3ToggleTerm direction=float<CR>",opts)
 
 -- disable search highlight
 keymap('n','<leader>h',':nohlsearch<CR>',opts)
+
+-- Rest nvim
+keymap('n','<leader>rq','<Plug>RestNvim',opts)
+keymap('n','<leader>rp','<Plug>RestNvimPreview',opts)
