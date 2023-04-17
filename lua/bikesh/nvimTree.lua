@@ -45,6 +45,11 @@ nvim_tree.setup {
       },
     },
   },
+  {
+    filters = {
+      dotfiles = true
+    }
+  },
   diagnostics = {
     enable = true,
     show_on_dirs = true,
@@ -54,6 +59,9 @@ nvim_tree.setup {
       warning = "",
       error = "",
     },
+  },
+  modified={
+    enable = true
   },
   view = {
     width = 30,
