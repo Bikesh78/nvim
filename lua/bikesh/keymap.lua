@@ -43,6 +43,7 @@ keymap("n", "<leader>fp", ":Telescope projects<CR>", opts)
 keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 keymap("n", "<leader>fh", ":Telescope help_tags<CR>", opts) -- Search Help
 keymap("n", "<leader>fw", ":Telescope grep_string<CR>", opts) -- Search current word
+keymap("n","<leader>fd",":Telescope diagnostics<CR>",opts)
 
 -- Comments
 keymap("n", "<leader>/", "<cmd>lua require('Comment.api').toggle.linewise.current()<CR>", opts)

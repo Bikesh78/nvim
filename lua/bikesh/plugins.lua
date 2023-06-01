@@ -19,7 +19,8 @@ require('lazy').setup({
   { "akinsho/toggleterm.nvim" },
   -- telescope
   {
-    'nvim-telescope/telescope.nvim', tag = '0.1.0',
+    'nvim-telescope/telescope.nvim',
+    tag = '0.1.0',
     dependencies = { { 'nvim-lua/plenary.nvim' } }
   },
   'nvim-lualine/lualine.nvim',
@@ -45,8 +46,9 @@ require('lazy').setup({
   --file explorer
   "kyazdani42/nvim-web-devicons",
   'nvim-tree/nvim-tree.lua',
-  -- tokyo night colour scheme
+  -- colour scheme
   'folke/tokyonight.nvim',
+  { "catppuccin/nvim", name = "catppuccin" },
   -- auto tag close
   'windwp/nvim-ts-autotag',
   -- rest nvim for api testing
