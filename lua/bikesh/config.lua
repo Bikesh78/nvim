@@ -41,5 +41,5 @@ vim.opt.spell = false
 vim.opt.spelllang = "en"
 vim.opt.scrolloff = 8 -- is one of my fav
 vim.opt.sidescrolloff = 8
-vim.cmd [[colorscheme tokyonight]] -- set colorscheme to tokyonight
+vim.cmd [[colorscheme tokyonight-day]] -- set colorscheme to tokyonight
 -- vim.opt.winblend = 0

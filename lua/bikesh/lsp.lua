@@ -5,7 +5,8 @@ local servers = {
   'cssls',
   'emmet_ls',
   'html',
-  "tailwindcss"
+  "tailwindcss",
+  "eslint"
 }
 
 -- set up mason and mason-lspconfig
