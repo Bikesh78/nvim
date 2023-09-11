@@ -15,7 +15,9 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
   { 'jiangmiao/auto-pairs' },
+  -- coment
   { 'numToStr/Comment.nvim' },
+  --terminal
   { "akinsho/toggleterm.nvim" },
   -- telescope
   {
@@ -26,7 +28,11 @@ require('lazy').setup({
   'nvim-lualine/lualine.nvim',
   {
     'nvim-treesitter/nvim-treesitter',
-    build = ':TSUpdate'
+    build = ':TSUpdate',
+     dependencies = {
+       -- comment for jsx,tsx
+      'JoosepAlviste/nvim-ts-context-commentstring',
+    },
   },
   -- lsp
   "williamboman/mason.nvim",
