@@ -6,6 +6,7 @@ vim.opt.completeopt = { "menuone", "noselect" }
 vim.opt.conceallevel = 0 -- so that `` is visible in markdown files
 vim.opt.fileencoding = "utf-8" -- the encoding written to a file
 vim.opt.foldmethod = "manual" -- folding set to "expr" for treesitter based folding
+-- vim.opt.foldmethod = "indent" -- folding set to "indent" 
 vim.opt.foldexpr = "" -- set to "nvim_treesitter#foldexpr()" for treesitter based folding
 vim.opt.guifont = "monospace:h17" -- the font used in graphical neovim applications
 vim.opt.hidden = true -- required to keep multiple buffers and open multiple buffers
@@ -41,5 +42,5 @@ vim.opt.spell = false
 vim.opt.spelllang = "en"
 vim.opt.scrolloff = 8 -- is one of my fav
 vim.opt.sidescrolloff = 8
-vim.cmd [[colorscheme tokyonight-day]] -- set colorscheme to tokyonight
+vim.cmd [[colorscheme tokyonight]] -- set colorscheme to tokyonight
 -- vim.opt.winblend = 0

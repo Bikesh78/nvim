@@ -29,8 +29,8 @@ require('lazy').setup({
   {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
-     dependencies = {
-       -- comment for jsx,tsx
+    dependencies = {
+      -- comment for jsx,tsx
       'JoosepAlviste/nvim-ts-context-commentstring',
     },
   },
@@ -59,6 +59,11 @@ require('lazy').setup({
   'windwp/nvim-ts-autotag',
   -- rest nvim for api testing
   'rest-nvim/rest.nvim',
-  dependencies = { { 'nvim-lua/plenary.nvim' } }
+  dependencies = { { 'nvim-lua/plenary.nvim' } },
+  -- session manager
+  
+    'stevearc/resession.nvim',
+    opts = {},
+  
 })
 -- vim.cmd [[colorscheme tokyonight]] -- set colorscheme to tokyonight

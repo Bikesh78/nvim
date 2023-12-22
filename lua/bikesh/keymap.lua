@@ -71,3 +71,6 @@ keymap('n', '<leader>h', ':nohlsearch<CR>', opts)
 -- Rest nvim
 keymap('n', '<leader>rq', '<Plug>RestNvim', opts)
 keymap('n', '<leader>rp', '<Plug>RestNvimPreview', opts)
+
+-- Change current directory to directory containing current file
+keymap('n', '<leader>cd', ':cd %:p:h<CR>', opts)
