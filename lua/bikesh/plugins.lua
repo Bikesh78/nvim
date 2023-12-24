@@ -61,9 +61,12 @@ require('lazy').setup({
   'rest-nvim/rest.nvim',
   dependencies = { { 'nvim-lua/plenary.nvim' } },
   -- session manager
-  
+  {
     'stevearc/resession.nvim',
     opts = {},
-  
+  },
+  -- harpoon
+  "ThePrimeagen/harpoon",
+
 })
 -- vim.cmd [[colorscheme tokyonight]] -- set colorscheme to tokyonight

@@ -74,3 +74,10 @@ keymap('n', '<leader>rp', '<Plug>RestNvimPreview', opts)
 
 -- Change current directory to directory containing current file
 keymap('n', '<leader>cd', ':cd %:p:h<CR>', opts)
+
+-- harpoon 
+keymap('n', '<leader>hm', ':lua require("harpoon.ui").toggle_quick_menu()<CR>', opts) -- view all project marks
+keymap('n', '<leader>ha', ':lua require("harpoon.mark").add_file()<CR>', opts)  -- mark file
+keymap('n', '<leader>hn', ':lua require("harpoon.ui").nav_next()<CR>', opts) --navigate to next mark
+keymap('n', '<leader>hp', ':lua require("harpoon.ui").nav_prev()<CR>', opts) --navigate to previous mark
+
