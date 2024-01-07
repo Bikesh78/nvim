@@ -45,6 +45,7 @@ require('lazy').setup({
   'hrsh7th/cmp-path',
   -- snippet
   "L3MON4D3/LuaSnip",
+  "rafamadriz/friendly-snippets",
   -- formatting and linting
   "jose-elias-alvarez/null-ls.nvim",
   -- git
@@ -67,6 +68,20 @@ require('lazy').setup({
   },
   -- harpoon
   "ThePrimeagen/harpoon",
+
+  -- live-server for html and css
+  -- "turbio/bracey.vim"
+
+  {
+    "ThePrimeagen/refactoring.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+    },
+    config = function()
+      require("refactoring").setup()
+    end,
+  },
 
 })
 -- vim.cmd [[colorscheme tokyonight]] -- set colorscheme to tokyonight

@@ -7,7 +7,8 @@ local servers = {
   'html',
   "tailwindcss",
   "eslint",
-  "gopls"
+  "gopls",
+  "bashls"
 }
 
 -- set up mason and mason-lspconfig
