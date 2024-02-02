@@ -5,10 +5,11 @@ local servers = {
   'cssls',
   'emmet_ls',
   'html',
-  "tailwindcss",
+  -- "tailwindcss",
   "eslint",
   "gopls",
-  "bashls"
+  "bashls",
+  "golangci_lint_ls"
 }
 
 -- set up mason and mason-lspconfig

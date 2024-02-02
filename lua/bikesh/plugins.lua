@@ -44,8 +44,13 @@ require('lazy').setup({
   'hrsh7th/cmp-buffer',
   'hrsh7th/cmp-path',
   -- snippet
-  "L3MON4D3/LuaSnip",
-  "rafamadriz/friendly-snippets",
+  {
+    "L3MON4D3/LuaSnip",
+    -- follow latest release.
+    dependencies = { "rafamadriz/friendly-snippets" },
+  },
+  -- "L3MON4D3/LuaSnip",
+  -- "rafamadriz/friendly-snippets",
   -- formatting and linting
   "jose-elias-alvarez/null-ls.nvim",
   -- git
