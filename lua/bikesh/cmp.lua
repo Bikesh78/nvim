@@ -18,7 +18,7 @@ local kind_icons = {
   Value = "󰎠",
   Enum = "",
   Keyword = "",
-  Snippet = "󰃐",
+  Snippet = "󱁤",
   Color = "󰏘",
   File = "󰈙",
   Reference = "",
@@ -31,7 +31,8 @@ local kind_icons = {
   TypeParameter = "",
 }
 
-require("luasnip/loaders/from_vscode").lazy_load()
+-- require("luasnip/loaders/from_vscode").lazy_load()
+require("luasnip.loaders.from_vscode").load ()
 
 cmp.setup {
   snippet = {

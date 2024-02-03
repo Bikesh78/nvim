@@ -44,10 +44,11 @@ require('lazy').setup({
   'hrsh7th/cmp-buffer',
   'hrsh7th/cmp-path',
   -- snippet
+  'saadparwaiz1/cmp_luasnip',
   {
     "L3MON4D3/LuaSnip",
     -- follow latest release.
-    dependencies = { "rafamadriz/friendly-snippets" },
+    dependencies = { "rafamadriz/friendly-snippets",lazy=true },
   },
   -- "L3MON4D3/LuaSnip",
   -- "rafamadriz/friendly-snippets",
