@@ -62,6 +62,7 @@ require('lazy').setup({
   -- colour scheme
   'folke/tokyonight.nvim',
   { "catppuccin/nvim", name = "catppuccin" },
+  "neanias/everforest-nvim",
   -- auto tag close
   'windwp/nvim-ts-autotag',
   -- rest nvim for api testing
