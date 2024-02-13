@@ -9,7 +9,9 @@ local servers = {
   "eslint",
   "gopls",
   "bashls",
-  "golangci_lint_ls"
+  "golangci_lint_ls",
+  -- "phpactor",
+  "intelephense"
 }
 
 -- set up mason and mason-lspconfig
