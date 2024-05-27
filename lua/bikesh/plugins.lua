@@ -22,8 +22,8 @@ require('lazy').setup({
   -- telescope
   {
     'nvim-telescope/telescope.nvim',
-    tag = '0.1.0',
-    dependencies = { { 'nvim-lua/plenary.nvim' } }
+    tag = '0.1.6',
+    dependencies = { 'nvim-lua/plenary.nvim' }
   },
   'nvim-lualine/lualine.nvim',
   {
@@ -48,7 +48,7 @@ require('lazy').setup({
   {
     "L3MON4D3/LuaSnip",
     -- follow latest release.
-    dependencies = { "rafamadriz/friendly-snippets",lazy=true },
+    dependencies = { "rafamadriz/friendly-snippets", lazy = true },
   },
   -- "L3MON4D3/LuaSnip",
   -- "rafamadriz/friendly-snippets",
@@ -63,6 +63,7 @@ require('lazy').setup({
   'folke/tokyonight.nvim',
   { "catppuccin/nvim", name = "catppuccin" },
   "neanias/everforest-nvim",
+  "morhetz/gruvbox",
   -- auto tag close
   'windwp/nvim-ts-autotag',
   -- rest nvim for api testing
@@ -74,7 +75,16 @@ require('lazy').setup({
     opts = {},
   },
   -- harpoon
-  "ThePrimeagen/harpoon",
+  {
+    "ThePrimeagen/harpoon",
+    config = function()
+      require('harpoon').setup({
+        menu = {
+          width = vim.api.nvim_win_get_width(0) - 4,
+        }
+      })
+    end
+  },
 
   -- live-server for html and css
   -- "turbio/bracey.vim"
