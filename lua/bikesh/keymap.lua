@@ -30,7 +30,8 @@ keymap("n", "<C-Down>", ":resize +2<CR>", opts)
 keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
-keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts) -- toggle nvim-tree file explorer
+-- keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts) -- toggle nvim-tree file explorer
+keymap("n", "<leader>e", ":Neotree toggle<CR>", opts) -- toggle nvim-tree file explorer
 
 -- Navigate buffers
 keymap("n", "<leader>bn", ":bnext<CR>", opts)

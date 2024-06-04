@@ -6,7 +6,7 @@ local servers = {
   'emmet_ls',
   'html',
   -- "tailwindcss",
-  "eslint",
+  -- "eslint",
   -- "gopls",
   "bashls",
   -- "golangci_lint_ls",

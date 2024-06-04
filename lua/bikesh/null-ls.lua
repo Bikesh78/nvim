@@ -21,7 +21,7 @@ null_ls.setup({
     null_ls.builtins.formatting.prettierd,
     null_ls.builtins.diagnostics.golangci_lint,
     --null_ls.builtins.formatting.stylua,
-    -- null_ls.builtins.diagnostics.eslint_d,
+    null_ls.builtins.diagnostics.eslint_d,
     --null_ls.builtins.completion.spell,
   },
 })
