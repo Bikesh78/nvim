@@ -11,7 +11,8 @@ local servers = {
   "bashls",
   -- "golangci_lint_ls",
   -- "phpactor",
-  "intelephense"
+  "intelephense",
+  "pyright",
 }
 
 -- set up mason and mason-lspconfig
