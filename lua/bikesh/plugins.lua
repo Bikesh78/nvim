@@ -93,8 +93,6 @@ require('lazy').setup({
   "morhetz/gruvbox",
   -- auto tag close
   'windwp/nvim-ts-autotag',
-  -- rest nvim for api testing
-  'rest-nvim/rest.nvim',
   dependencies = { { 'nvim-lua/plenary.nvim' } },
   -- session manager
   {
