@@ -53,7 +53,8 @@ require('lazy').setup({
   -- "L3MON4D3/LuaSnip",
   -- "rafamadriz/friendly-snippets",
   -- formatting and linting
-  "jose-elias-alvarez/null-ls.nvim",
+  -- "jose-elias-alvarez/null-ls.nvim",
+  "nvimtools/none-ls.nvim",
   -- git
   "tpope/vim-fugitive",
   --file explorer
