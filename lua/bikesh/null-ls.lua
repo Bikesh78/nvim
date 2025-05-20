@@ -18,11 +18,11 @@ null_ls.setup({
   end,
   -- select sources
   sources = {
-    null_ls.builtins.formatting.prettierd,
-    null_ls.builtins.diagnostics.golangci_lint,
-    null_ls.builtins.formatting.black,
+    -- null_ls.builtins.formatting.prettierd,
+    -- null_ls.builtins.diagnostics.golangci_lint,
+    -- null_ls.builtins.formatting.eslint,
     --null_ls.builtins.formatting.stylua,
-    null_ls.builtins.diagnostics.eslint_d,
+    -- null_ls.builtins.diagnostics.eslint_d,
     -- null_ls.builtins.diagnostics.pylint,
     --null_ls.builtins.completion.spell,
   },
