@@ -1,12 +1,13 @@
 -- Add installed language server
 local servers = {
-  'tsserver',
+  -- 'tsserver',
+  'ts_ls',
   'lua_ls',
   'cssls',
   'emmet_ls',
   'html',
   -- "tailwindcss",
-  -- "eslint",
+  "eslint",
   -- "gopls",
   "bashls",
   -- "golangci_lint_ls",
