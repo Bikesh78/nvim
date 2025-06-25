@@ -6,7 +6,7 @@ local servers = {
   'cssls',
   'emmet_ls',
   'html',
-  -- "tailwindcss",
+  "tailwindcss",
   "eslint",
   -- "gopls",
   "bashls",
@@ -67,8 +67,18 @@ end
 
 -- loop through servers and add each language servers
 for _, server in ipairs(servers) do
-  require('lspconfig')[server].setup {
-    on_attach = on_attach,
-    capabilities = capabilities
-  }
+  if server == "tailwindcss" then -- add lsp cupport for cva
+    require 'lspconfig'.tailwindcss.setup({
+      settings = {
+        tailwindCSS = {
+          classFunctions = { "cva", "cx" },
+        },
+      },
+    })
+  else
+    require('lspconfig')[server].setup { -- lsp config for rest of the servers
+      on_attach = on_attach,
+      capabilities = capabilities
+    }
+  end
 end
