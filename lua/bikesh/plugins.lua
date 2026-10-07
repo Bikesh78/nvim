@@ -22,7 +22,7 @@ require('lazy').setup({
   -- telescope
   {
     'nvim-telescope/telescope.nvim',
-    tag = '0.1.6',
+    version = '*', -- latest release; 0.1.6 used LSP APIs deprecated in nvim 0.11
     dependencies = { 'nvim-lua/plenary.nvim' }
   },
   'nvim-lualine/lualine.nvim',

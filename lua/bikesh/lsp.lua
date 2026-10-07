@@ -13,7 +13,7 @@ local servers = {
   -- "golangci_lint_ls",
   -- "phpactor",
   "intelephense",
-  "basedpyright",
+  "pyrefly",
 }
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
@@ -26,6 +26,35 @@ vim.lsp.config('tailwindcss', { -- add lsp support for cva
       classFunctions = { "cva", "cx" },
     },
   },
+})
+
+-- find the project's python: active venv, then .venv/venv in the root, then poetry's venv
+local function python_path(root)
+  if vim.env.VIRTUAL_ENV then
+    return vim.env.VIRTUAL_ENV .. '/bin/python'
+  end
+  for _, dir in ipairs({ '.venv', 'venv' }) do
+    local path = root .. '/' .. dir .. '/bin/python'
+    if vim.uv.fs_stat(path) then
+      return path
+    end
+  end
+  if vim.uv.fs_stat(root .. '/poetry.lock') and vim.fn.executable('poetry') == 1 then
+    local result = vim.system({ 'poetry', 'env', 'info', '-p' }, { cwd = root, text = true }):wait()
+    if result.code == 0 and result.stdout ~= '' then
+      return vim.trim(result.stdout) .. '/bin/python'
+    end
+  end
+end
+
+vim.lsp.config('pyrefly', {
+  settings = { python = {} }, -- filled in by before_init; pyrefly reads python.pythonPath
+  before_init = function(_, config)
+    local path = config.root_dir and python_path(config.root_dir)
+    if path then
+      config.settings.python.pythonPath = path
+    end
+  end,
 })
 
 -- Mappings.
