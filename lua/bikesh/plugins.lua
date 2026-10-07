@@ -121,6 +121,28 @@ require('lazy').setup({
       highlight = true,
     },
   },
+  -- pin enclosing function/class lines to the top of the window
+  {
+    'nvim-treesitter/nvim-treesitter-context',
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
+    lazy = false, -- `keys` would otherwise delay loading until [c is pressed
+    opts = {
+      max_lines = 5, -- keep it from taking over the window in deeply nested code
+    },
+    keys = {
+      {
+        '[c',
+        function()
+          if vim.wo.diff then -- keep built-in "previous change" in diff mode
+            vim.cmd('normal! ' .. vim.v.count1 .. '[c')
+          else
+            require('treesitter-context').go_to_context(vim.v.count1)
+          end
+        end,
+        desc = 'Jump to context (previous change in diff mode)',
+      },
+    },
+  },
 
   -- live-server for html and css
   -- "turbio/bracey.vim"
