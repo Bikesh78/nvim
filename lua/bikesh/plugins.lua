@@ -100,7 +100,8 @@ require('lazy').setup({
     'stevearc/resession.nvim',
     opts = {},
   },
-  -- harpoon
+
+  -- neovim code navigation
   {
     "ThePrimeagen/harpoon",
     config = function()
@@ -110,6 +111,15 @@ require('lazy').setup({
         }
       })
     end
+  },
+  -- lsp breadcrumbs (shown in lualine statusline)
+  {
+    'SmiteshP/nvim-navic',
+    dependencies = { 'neovim/nvim-lspconfig' },
+    opts = {
+      lsp = { auto_attach = true }, -- attach to any client with documentSymbolProvider
+      highlight = true,
+    },
   },
 
   -- live-server for html and css
@@ -135,7 +145,8 @@ require('lazy').setup({
     ---@module 'render-markdown'
     ---@type render.md.UserConfig
     opts = {},
-  }
+  },
+
 
 })
 -- vim.cmd [[colorscheme tokyonight]] -- set colorscheme to tokyonight
