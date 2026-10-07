@@ -20,7 +20,7 @@ require('lualine').setup {
   sections = {
     lualine_a = {'mode'},
     lualine_b = {'branch', 'diff', 'diagnostics'},
-    lualine_c = {'filename', 'navic'},
+    lualine_c = {'filename'},
     lualine_x = {'encoding', 'fileformat', 'filetype'},
     lualine_y = {'progress'},
     lualine_z = {'location'}
@@ -34,7 +34,9 @@ require('lualine').setup {
     lualine_z = {}
   },
   tabline = {},
-  winbar = {},
+  winbar = {
+    lualine_c = { 'navic' },
+  },
   inactive_winbar = {},
   extensions = {}
 }

@@ -112,7 +112,7 @@ require('lazy').setup({
       })
     end
   },
-  -- lsp breadcrumbs (shown in lualine statusline)
+  -- lsp breadcrumbs (shown in lualine winbar)
   {
     'SmiteshP/nvim-navic',
     dependencies = { 'neovim/nvim-lspconfig' },
