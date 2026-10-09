@@ -42,6 +42,40 @@ vim.opt.spell = false
 vim.opt.spelllang = "en"
 vim.opt.scrolloff = 8 -- is one of my fav
 vim.opt.sidescrolloff = 8
+
+-- show whitespace: tabs, trailing spaces, and indent guides
+vim.opt.list = true
+vim.opt.listchars = { tab = "│ ", trail = "·", nbsp = "␣" }
+
+-- indent guides: a │ at each indent level, sized to the buffer's indent width
+-- (python's ftplugin uses 4 spaces, the global default here is 2)
+local function set_indent_guides()
+  local width = math.max(vim.fn.shiftwidth(), 1)
+  vim.opt_local.listchars:append({ leadmultispace = "│" .. string.rep(" ", width - 1) })
+end
+vim.api.nvim_create_autocmd({ "FileType", "BufWinEnter" }, { callback = set_indent_guides })
+vim.api.nvim_create_autocmd("OptionSet", { pattern = { "shiftwidth", "tabstop" }, callback = set_indent_guides })
+
+-- guide color: some themes (e.g. gruvbox) make Whitespace nearly the background color,
+-- so after any colorscheme loads, mix 35% of the text color into the background
+local function set_whitespace_hl()
+  local normal = vim.api.nvim_get_hl(0, { name = "Normal", link = false })
+  if not (normal.fg and normal.bg) then
+    return
+  end
+  local function channel(color, shift)
+    return math.floor(color / 2 ^ shift) % 256
+  end
+  local mixed = 0
+  for _, shift in ipairs({ 16, 8, 0 }) do
+    local fg, bg = channel(normal.fg, shift), channel(normal.bg, shift)
+    mixed = mixed + math.floor(bg + (fg - bg) * 0.35 + 0.5) * 2 ^ shift
+  end
+  vim.api.nvim_set_hl(0, "Whitespace", { fg = mixed })
+end
+vim.api.nvim_create_autocmd("ColorScheme", { callback = set_whitespace_hl })
+
+-- colorscheme
 -- vim.cmd [[colorscheme everforest]] -- set colorscheme to everforest
 vim.cmd [[colorscheme tokyonight-day]] -- set colorscheme to everforest
 -- vim.cmd [[colorscheme gruvbox]] -- set colorscheme to everforest
